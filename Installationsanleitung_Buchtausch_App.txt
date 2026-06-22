@@ -1,0 +1,73 @@
+Installationsanleitung 
+Buchtausch-App
+
+
+Voraussetzungen
+
+Stelle sicher, dass folgende Software installiert ist:
+
+   MySQL Server Version 8.0 oder höher → Download
+   MySQL Workbench (empfohlen) → Download
+
+Schritt-für-Schritt Anleitung
+
+Schritt 1: Repository herunterladen
+
+Lade das Repository als ZIP-Datei herunter oder klone es mit Git:
+
+git clone https://github.com/DEIN-GITHUB-USERNAME/DEIN-REPO-NAME.git
+
+Schritt 2: MySQL starten
+
+Stelle sicher, dass der MySQL-Server läuft.
+In MySQL Workbench: Verbindung öffnen und einloggen.
+
+Schritt 3: Datenbank erstellen
+
+Führe folgenden Befehl aus, um eine neue Datenbank anzulegen:
+
+CREATE DATABASE buchtausch;
+USE buchtausch;
+
+Schritt 4: SQL-Datei importieren
+
+Importiere die Datei buchtausch-app.sql, die das vollständige Schema und alle Daten enthält:
+
+Option A – MySQL Workbench:
+
+    Klicke auf File → Open SQL Script
+    Wähle die Datei sql/buchtausch-app.sql
+    Klicke auf das Blitz-Symbol (⚡) zum Ausführen
+
+Option B – Kommandozeile:
+
+mysql -u root -p buchtausch < sql/buchtausch-app.sql
+
+Schritt 5: Installation prüfen
+
+Überprüfe, ob alle Tabellen korrekt erstellt wurden:
+
+SHOW TABLES;
+
+Du solltest folgende Tabellen sehen:
+
+    Nutzer
+    Nutzerrolle
+    Buch
+    Exemplar
+    Zustand
+    Ausleihe
+    Warteliste
+    Nachricht
+    Bewertung
+
+❗ Häufige Fehler
+Problem 	Lösung
+Access denied 	Benutzername oder Passwort prüfen
+Unknown database 	Schritt 3 wiederholen (CREATE DATABASE)
+Table already exists 	Datenbank leeren oder neu erstellen
+
+📬 Kontakt
+
+Bei Fragen oder Problemen: Celina Hermann
+IU Internationale Hochschule – Kurs IDBS01
